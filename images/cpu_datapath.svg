@@ -43,30 +43,47 @@
 
   <g transform="translate(10,20)" text-anchor="middle" font-weight="700">
     <rect x="20" y="170" width="80" height="56" rx="8" fill="#EEF4FB" stroke="#2C68A8" stroke-width="2"/>
-    <text x="60" y="203" font-size="14" fill="#1F4E80">pc</text>
+    <text x="60" y="194" font-size="14" fill="#1F4E80">pc</text>
     <rect x="130" y="160" width="112" height="76" rx="8" fill="#EEF4FB" stroke="#2C68A8" stroke-width="2"/>
-    <text x="186" y="194" font-size="13" fill="#1F4E80">Instruction</text>
-    <text x="186" y="211" font-size="13" fill="#1F4E80">memory</text>
+    <text x="186" y="187" font-size="13" fill="#1F4E80">Instruction</text>
+    <text x="186" y="203" font-size="13" fill="#1F4E80">memory</text>
     <rect x="272" y="170" width="110" height="56" rx="8" fill="#EEF4FB" stroke="#2C68A8" stroke-width="2"/>
-    <text x="327" y="203" font-size="13" fill="#1F4E80">instruction</text>
+    <text x="327" y="194" font-size="13" fill="#1F4E80">instruction</text>
     <rect x="430" y="40" width="140" height="110" rx="8" fill="#F3EFFA" stroke="#6E4FB0" stroke-width="2"/>
-    <text x="500" y="100" font-size="14" fill="#4E3586">Register file</text>
+    <text x="500" y="86" font-size="14" fill="#4E3586">Register file</text>
     <rect x="430" y="252" width="140" height="60" rx="8" fill="#F3EFFA" stroke="#6E4FB0" stroke-width="2"/>
-    <text x="500" y="287" font-size="14" fill="#4E3586">Immediate</text>
+    <text x="500" y="278" font-size="14" fill="#4E3586">Immediate</text>
     <rect x="612" y="18" width="108" height="50" rx="8" fill="#FBF1E8" stroke="#B35F1C" stroke-width="2"/>
-    <text x="666" y="48" font-size="13" fill="#7F4210">Branch</text>
+    <text x="666" y="39" font-size="13" fill="#7F4210">Branch</text>
     <rect x="612" y="150" width="108" height="100" rx="8" fill="#FBF1E8" stroke="#B35F1C" stroke-width="2"/>
-    <text x="666" y="206" font-size="16" fill="#7F4210">ALU</text>
+    <text x="666" y="192" font-size="16" fill="#7F4210">ALU</text>
     <rect x="752" y="172" width="120" height="56" rx="8" fill="#FBF1E8" stroke="#B35F1C" stroke-width="2"/>
-    <text x="812" y="205" font-size="13" fill="#7F4210">alu_result</text>
+    <text x="812" y="196" font-size="13" fill="#7F4210">alu_result</text>
     <rect x="752" y="276" width="140" height="76" rx="8" fill="#EAF5F3" stroke="#1F7F70" stroke-width="2"/>
-    <text x="822" y="319" font-size="13" fill="#155A4F">Data memory</text>
+    <text x="822" y="309" font-size="13" fill="#155A4F">Data memory</text>
     <rect x="612" y="330" width="108" height="50" rx="8" fill="#EAF5F3" stroke="#1F7F70" stroke-width="2"/>
-    <text x="666" y="360" font-size="13" fill="#155A4F">load_data</text>
+    <text x="666" y="351" font-size="13" fill="#155A4F">load_data</text>
     <rect x="272" y="330" width="118" height="50" rx="8" fill="#F9EEF2" stroke="#9A3A5A" stroke-width="2"/>
-    <text x="331" y="360" font-size="13" fill="#6E2840">rd_value</text>
+    <text x="331" y="351" font-size="13" fill="#6E2840">rd_value</text>
     <rect x="130" y="330" width="112" height="50" rx="8" fill="#F9EEF2" stroke="#9A3A5A" stroke-width="2"/>
-    <text x="186" y="360" font-size="13" fill="#6E2840">next_pc</text>
+    <text x="186" y="351" font-size="13" fill="#6E2840">next_pc</text>
+  </g>
+
+  <g transform="translate(10,20)" text-anchor="middle" font-size="11">
+    <text x="60" y="211" fill="#2C68A8">fetch address</text>
+    <text x="186" y="221" fill="#2C68A8">reads the word</text>
+    <text x="327" y="211" fill="#2C68A8">opcode, regs, imm</text>
+    <text x="500" y="105" fill="#6E4FB0">sends rs1, rs2 values</text>
+    <text x="500" y="120" fill="#6E4FB0">writes rd</text>
+    <text x="500" y="295" fill="#6E4FB0">sign-extended value</text>
+    <text x="666" y="55" fill="#B35F1C">taken or not</text>
+    <text x="666" y="212" fill="#B35F1C">result, address,</text>
+    <text x="666" y="227" fill="#B35F1C">or jump target</text>
+    <text x="812" y="213" fill="#B35F1C">saved ALU output</text>
+    <text x="822" y="327" fill="#1F7F70">RAM, LEDs, timers</text>
+    <text x="666" y="367" fill="#1F7F70">loaded value</text>
+    <text x="331" y="367" fill="#9A3A5A">alu, load, or pc+4</text>
+    <text x="186" y="367" fill="#9A3A5A">pc+4 or target</text>
   </g>
 
   <g text-anchor="middle" font-size="12" font-weight="700">
