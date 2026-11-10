@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 640" width="940" height="640" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9z" fill="#7C8A85"/>
+    </marker>
+    <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9z" fill="#56655F"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="938" height="638" rx="14" fill="#FFFFFF" stroke="#D3DBD7" stroke-width="2"/>
+  <text x="30" y="40" font-size="21" font-weight="700" fill="#18221F">Multicycle RV32I CPU</text>
+  <text x="30" y="62" font-size="13" fill="#56655F">The datapath in cpu.sv. Each block is colored by the state that uses it. Memory is memory.sv.</text>
+
+  <g transform="translate(10,80)" fill="none" stroke="#7C8A85" stroke-width="1.8" marker-end="url(#a)">
+    <path d="M100 198 H127"/>
+    <path d="M242 198 H269"/>
+    <path d="M382 186 H405 V95 H427"/>
+    <path d="M382 210 H412 V282 H427"/>
+    <path d="M570 46 H609"/>
+    <path d="M570 75 H582 V172 H609"/>
+    <path d="M570 120 H590 V214 H609"/>
+    <path d="M60 170 V146 H420 V242 H598 V188 H609"/>
+    <path d="M570 282 H604 V234 H609"/>
+    <path d="M720 200 H749"/>
+    <path d="M812 228 V273"/>
+    <path d="M570 128 H736 V300 H749"/>
+    <path d="M752 344 H723"/>
+    <path d="M612 356 H393"/>
+    <path d="M872 200 H898 V408 H331 V383"/>
+    <path d="M872 210 H906 V418 H186 V383"/>
+    <path d="M272 356 H256 V22 H500 V37"/>
+    <path d="M130 356 H60 V229"/>
+  </g>
+
+  <g transform="translate(10,80)" font-size="11" fill="#7C8A85">
+    <text x="104" y="190">addr</text>
+    <text x="246" y="190">word</text>
+    <text x="150" y="140">pc</text>
+    <text x="578" y="66">rs1</text>
+    <text x="594" y="112">rs2</text>
+    <text x="576" y="274">imm</text>
+    <text x="820" y="256">addr</text>
+    <text x="742" y="146">store data</text>
+    <text x="370" y="16">write rd</text>
+    <text x="500" y="402">alu_result</text>
+    <text x="70" y="300">pc ←</text>
+  </g>
+
+  <g transform="translate(10,80)" text-anchor="middle">
+    <g>
+      <rect x="20" y="170" width="80" height="56" rx="8" fill="#EEF4FB" stroke="#2C68A8" stroke-width="2"/>
+      <text x="60" y="194" font-size="14" font-weight="700" fill="#1F4E80">pc</text>
+      <text x="60" y="212" font-size="11" fill="#2C68A8">0x1000 start</text>
+    </g>
+    <g>
+      <rect x="130" y="160" width="112" height="76" rx="8" fill="#EEF4FB" stroke="#2C68A8" stroke-width="2"/>
+      <text x="186" y="186" font-size="13" font-weight="700" fill="#1F4E80">Instruction</text>
+      <text x="186" y="203" font-size="13" font-weight="700" fill="#1F4E80">memory</text>
+      <text x="186" y="222" font-size="11" fill="#2C68A8">0x1000–0x1FFF</text>
+    </g>
+    <g>
+      <rect x="272" y="170" width="110" height="56" rx="8" fill="#EEF4FB" stroke="#2C68A8" stroke-width="2"/>
+      <text x="327" y="194" font-size="13" font-weight="700" fill="#1F4E80">instruction</text>
+      <text x="327" y="212" font-size="11" fill="#2C68A8">latched word</text>
+    </g>
+    <g>
+      <rect x="430" y="40" width="140" height="110" rx="8" fill="#F3EFFA" stroke="#6E4FB0" stroke-width="2"/>
+      <text x="500" y="82" font-size="14" font-weight="700" fill="#4E3586">Register file</text>
+      <text x="500" y="101" font-size="11" fill="#6E4FB0">x0–x31, x0 always 0</text>
+      <text x="500" y="117" font-size="11" fill="#6E4FB0">reads rs1 and rs2</text>
+    </g>
+    <g>
+      <rect x="430" y="252" width="140" height="60" rx="8" fill="#F3EFFA" stroke="#6E4FB0" stroke-width="2"/>
+      <text x="500" y="278" font-size="14" font-weight="700" fill="#4E3586">Immediate</text>
+      <text x="500" y="296" font-size="11" fill="#6E4FB0">I, S, B, U, J formats</text>
+    </g>
+    <g>
+      <rect x="612" y="18" width="108" height="50" rx="8" fill="#FBF1E8" stroke="#B35F1C" stroke-width="2"/>
+      <text x="666" y="40" font-size="13" font-weight="700" fill="#7F4210">Branch</text>
+      <text x="666" y="57" font-size="11" fill="#B35F1C">taken?</text>
+    </g>
+    <g>
+      <rect x="612" y="150" width="108" height="100" rx="8" fill="#FBF1E8" stroke="#B35F1C" stroke-width="2"/>
+      <text x="666" y="186" font-size="16" font-weight="700" fill="#7F4210">ALU</text>
+      <text x="666" y="206" font-size="11" fill="#B35F1C">add, sub, logic</text>
+      <text x="666" y="221" font-size="11" fill="#B35F1C">shifts, compares</text>
+    </g>
+    <g>
+      <rect x="752" y="172" width="120" height="56" rx="8" fill="#FBF1E8" stroke="#B35F1C" stroke-width="2"/>
+      <text x="812" y="196" font-size="13" font-weight="700" fill="#7F4210">alu_result</text>
+      <text x="812" y="214" font-size="11" fill="#B35F1C">value or address</text>
+    </g>
+    <g>
+      <rect x="752" y="276" width="140" height="76" rx="8" fill="#EAF5F3" stroke="#1F7F70" stroke-width="2"/>
+      <text x="822" y="304" font-size="13" font-weight="700" fill="#155A4F">Data memory</text>
+      <text x="822" y="322" font-size="11" fill="#1F7F70">RAM 0x0000–0x0FFF</text>
+      <text x="822" y="337" font-size="11" fill="#1F7F70">LEDs, millis, micros</text>
+    </g>
+    <g>
+      <rect x="612" y="330" width="108" height="50" rx="8" fill="#EAF5F3" stroke="#1F7F70" stroke-width="2"/>
+      <text x="666" y="352" font-size="13" font-weight="700" fill="#155A4F">load_data</text>
+      <text x="666" y="369" font-size="11" fill="#1F7F70">loaded value</text>
+    </g>
+    <g>
+      <rect x="272" y="330" width="118" height="50" rx="8" fill="#F9EEF2" stroke="#9A3A5A" stroke-width="2"/>
+      <text x="331" y="352" font-size="13" font-weight="700" fill="#6E2840">rd_value</text>
+      <text x="331" y="369" font-size="11" fill="#9A3A5A">written to rd</text>
+    </g>
+    <g>
+      <rect x="130" y="330" width="112" height="50" rx="8" fill="#F9EEF2" stroke="#9A3A5A" stroke-width="2"/>
+      <text x="186" y="352" font-size="13" font-weight="700" fill="#6E2840">next_pc</text>
+      <text x="186" y="369" font-size="11" fill="#9A3A5A">pc + 4 or target</text>
+    </g>
+  </g>
+
+  <line x1="30" y1="524" x2="910" y2="524" stroke="#E3E8E6" stroke-width="1.5"/>
+  <text x="30" y="548" font-size="12" font-weight="700" fill="#56655F" letter-spacing="0.5">EACH INSTRUCTION, ONE STATE PER CLOCK CYCLE</text>
+  <g text-anchor="middle" font-size="12" font-weight="700">
+    <rect x="30" y="562" width="150" height="34" rx="17" fill="#2C68A8"/>
+    <text x="105" y="584" fill="#FFFFFF">FETCH</text>
+    <rect x="215" y="562" width="150" height="34" rx="17" fill="#6E4FB0"/>
+    <text x="290" y="584" fill="#FFFFFF">DECODE</text>
+    <rect x="400" y="562" width="150" height="34" rx="17" fill="#B35F1C"/>
+    <text x="475" y="584" fill="#FFFFFF">EXECUTE</text>
+    <rect x="585" y="562" width="150" height="34" rx="17" fill="#FFFFFF" stroke="#1F7F70" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="660" y="584" fill="#1F7F70">MEMORY</text>
+    <rect x="770" y="562" width="140" height="34" rx="17" fill="#9A3A5A"/>
+    <text x="840" y="584" fill="#FFFFFF">WRITEBACK</text>
+  </g>
+  <g fill="none" stroke="#56655F" stroke-width="1.8" marker-end="url(#s)">
+    <path d="M182 579 H212"/>
+    <path d="M367 579 H397"/>
+    <path d="M552 579 H582"/>
+    <path d="M737 579 H767"/>
+  </g>
+  <text x="30" y="620" font-size="12" fill="#56655F">MEMORY (dashed) runs only for loads and stores, so most instructions take 4 cycles and loads and stores take 5. WRITEBACK returns to FETCH.</text>
+</svg>
