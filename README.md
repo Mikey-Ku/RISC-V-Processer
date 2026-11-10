@@ -28,6 +28,11 @@ Each instruction moves through a five-state FSM in `cpu.sv`, one state per clock
 
 Most instructions take 4 cycles. Loads and stores take 5.
 
+`pc+4` is the address of the next instruction. Each instruction is 4 bytes, so instructions
+sit 4 addresses apart. `next_pc` is `pc+4` unless a jump or taken branch uses the ALU's
+target instead. `jal` and `jalr` also write `pc+4` to `rd` as the return address: `jal x13`
+at `0x1034` saves `0x1038`, and `jalr x14, 0(x13)` later jumps back there.
+
 The CPU updates on the falling edge of the clock and memory on the rising edge. An address
 the CPU sets at one falling edge is used by memory half a cycle later, and the data is
 ready by the next falling edge, so every memory access fits in one state. The register file
